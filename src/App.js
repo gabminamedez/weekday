@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row } from 'reactstrap';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-import List from './components/List';
+import Card from './components/Card';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,14 +15,33 @@ class App extends Component {
           <hr/>
 
           <Row xs="3">
-            <List id="notStarted" heading="Not Started">
-            </List>
+            <div className="list" id="notStarted">
+              <h3 className="heading">Not Started</h3>
+              <hr/>
 
-            <List id="inProgress" heading="In Progress">
-            </List>
+              <ul>
+                <li><Card></Card></li>
+                <li><Card></Card></li>
+              </ul>
+            </div>
 
-            <List id="completed" heading="Completed">
-            </List>
+            <div className="list" id="inProgress">
+              <h3 className="heading">In Progress</h3>
+              <hr/>
+
+              <ul>
+                <Card></Card>
+              </ul>
+            </div>
+
+            <div className="list" id="completed">
+              <h3 className="heading">Completed</h3>
+              <hr/>
+
+              <ul>
+                <Card></Card>
+              </ul>
+            </div>
           </Row>
         </Container>
       </div>
